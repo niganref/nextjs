@@ -1,0 +1,25 @@
+image:
+  repository: nextjs-app
+  tag: latest
+
+service:
+  type: LoadBalancer  
+  port: 80           
+
+
+resources:
+  limits:
+    memory: "512Mi"
+    cpu: "500m"
+  requests:
+    memory: "256Mi"
+    cpu: "250m"
+
+serviceAccount:
+  create: true 
+  name: nextjs-serviceaccount 
+
+ingress:
+  enabled: false
+autoscaling:
+ enabled: false
